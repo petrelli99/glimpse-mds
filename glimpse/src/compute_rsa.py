@@ -125,7 +125,7 @@ def main():
     # save the summaries
     # make the output directory if it does not exist
     Path(args.output_dir).mkdir(parents=True, exist_ok=True)
-    output_path = Path(args.output_dir) /-_-r3-_-rsa_reranked.pk"
+    output_path = Path(args.output_dir) /"-_-r3-_-rsa_reranked.pk"
     output_path_base = (
         Path(args.output_dir) / f"{args.summaries.stem}-_-base_reranked.pk"
     )
