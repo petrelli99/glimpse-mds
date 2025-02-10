@@ -17,8 +17,8 @@ conda activate "glimpse"
 # Check if input file path is provided and valid
 if [ -z "$1" ] || [ ! -f "$1" ]; then
     # if no path is provided, or the path is invalid, use the default test dataset
-    echo "Couldn't find a valid path. Using default path: data/processed/business_articles.csv"
-    dataset_path="data/processed/business_articles.csv"
+    echo "Couldn't find a valid path. Using default path: data/processed/articles.csv"
+    dataset_path="data/processed/articles.csv"
 else
     dataset_path="$1"
 fi
