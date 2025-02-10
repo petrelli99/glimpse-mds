@@ -88,14 +88,17 @@ def main():
     # check if exists already, if it does load it and add the new columns
 
     print(df)
-
     if path.exists():
         df_old = pd.read_csv(path, index_col=0)
+    
+        # Unire i dati nuovi con quelli esistenti, mantenendo le vecchie righe
+        df = df_old.join(df, how="outer", rsuffix="_new")
 
-        # create the colums if they do not exist
+    # Se ci sono colonne duplicate a causa del suffisso, le sostituiamo
         for col in df.columns:
-            if col not in df_old.columns:
-                df_old[col] = float("nan")
+            if col.endswith("_new"):
+                df[col[:-4]] = df[col]
+                df.drop(columns=[col], inplace=True)
 
         # add entry to the dataframe
         for col in df.columns:
