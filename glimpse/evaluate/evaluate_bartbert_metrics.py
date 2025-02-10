@@ -89,12 +89,12 @@ def main():
 
     print(df)
     if path.exists():
-        df_old = pd.read_csv(path, index_col=0)
-    
+         df_old = pd.read_csv(path, index_col=0)
+
         # Unire i dati nuovi con quelli esistenti, mantenendo le vecchie righe
         df = df_old.join(df, how="outer", rsuffix="_new")
-
-    # Se ci sono colonne duplicate a causa del suffisso, le sostituiamo
+    
+        # Se ci sono colonne duplicate a causa del suffisso, le sostituiamo
         for col in df.columns:
             if col.endswith("_new"):
                 df[col[:-4]] = df[col]
