@@ -28,7 +28,7 @@ def parse_args():
     # if ran in a scripted way, the output path will be printed
     parser.add_argument("--scripted-run", action=argparse.BooleanOptionalAction, default=False)
 
-    parser.add_argument("--device", type=str, default="cuda")
+    parser.add_argument("--device", type=str, default="cpu")
 
     return parser.parse_args()
 
