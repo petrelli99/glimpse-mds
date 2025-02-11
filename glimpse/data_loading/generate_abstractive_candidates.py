@@ -50,7 +50,7 @@ def parse_args():
     parser.add_argument("--decoding_config", type=str, default="top_p_sampling", choices=GENERATION_CONFIGS.keys())
 
     parser.add_argument("--batch_size", type=int, default=16)
-    parser.add_argument("--device", type=str, default="cuda")
+    parser.add_argument("--device", type=str, default="cpu")
     parser.add_argument("--trimming", action=argparse.BooleanOptionalAction, default=True)
     
     parser.add_argument("--output_dir", type=str, default="data/candidates")
